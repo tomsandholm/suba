@@ -4,6 +4,6 @@
 # install necessary tools
 sudo apt-get install -y autoconf automake libtool
 
-autoconf --verbose --install --force
+autoreconf --verbose --install --force
 ./configure
 make
