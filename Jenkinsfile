@@ -25,8 +25,15 @@ pipeline {
       steps {
         sh """
           make all
+          make dist
         """
       }
+    }
+  }
+  post {
+    always {
+      archiveArtifacts artifacts: 'sub*.tar.gz', onlyIfSuccessful: true
+      step([$class: 'WsCleanup'])
     }
   }
 }
