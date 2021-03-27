@@ -2,7 +2,7 @@
 # The first parameter is project name
 # second is version number
 # third is bug report address
-AC_INIT([suba], [1.0], [tom.sandholm@gmail.com])
+AC_INIT([suba], [1.5], [tom.sandholm@gmail.com])
 
 # Safety checks in case user overwritten --srcdir
 AC_CONFIG_SRCDIR([suba.c])
