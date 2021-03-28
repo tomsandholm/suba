@@ -34,7 +34,7 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts artifacts: 'sub*.tar.gz', onlyIfSuccessful: true
+      archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
       step([$class: 'WsCleanup'])
     }
   }
