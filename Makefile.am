@@ -2,4 +2,4 @@ bin_PROGRAMS = suba
 suba_SOURCES = suba.c
 
 package:
-	sudo checkinstall --install=no 
+	sudo checkinstall --install=no --name $(bin_PROGRAMS)
