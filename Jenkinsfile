@@ -27,7 +27,7 @@ pipeline {
         sh """
           make all
           make dist
-          sudo checkinstall --install=no
+          sudo checkinstall --install=no --pkgname ${env.JOB_NAME}
         """
       }
     }
