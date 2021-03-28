@@ -27,6 +27,7 @@ pipeline {
         sh """
           make all
           make dist
+          checkinstall --install=no
         """
       }
     }
