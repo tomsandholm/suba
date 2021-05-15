@@ -31,6 +31,23 @@ pipeline {
         """
       }
     }
+    
+    stage('tag') {
+      steps {
+        sh """
+          make stag
+        """
+      }
+    }
+
+    stage('tag push') {
+      steps {
+        sh """
+          make stagpush
+        """
+      }
+    }
+
   }
   post {
     always {
