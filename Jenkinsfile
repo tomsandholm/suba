@@ -52,7 +52,8 @@ pipeline {
                 } else {
                     sh 'make stag'
                 }
-           }
+             }
+        }
     }
 
     stage('tag push') {
@@ -70,4 +71,3 @@ pipeline {
     }
   }
 }
-
