@@ -4,6 +4,13 @@ pipeline {
     timestamps();
     copyArtifactPermission('toprepo');
   }
+  parameters {
+    string (
+        description: 'Tag Override Value',
+        name: 'tagovr',
+        defaultValue: ''
+    }
+  }
 
   stages {
 
@@ -33,11 +40,17 @@ pipeline {
     }
     
     stage('tag') {
-      steps {
-        sh """
-          make stag
-        """
-      }
+        steps {
+            script {
+                if ( params.tagovr != '' ) {
+                    def TAGSTRING = "${params.tagovr}"
+                    echo "##### Tag OVERRIDE is applied"
+                    echo "##### Tag: $TAGSTRING"
+                    sh 'make -e STAG=$TAGSTRING stag'
+                } else {
+                    sh 'make stag'
+                }
+           }
     }
 
     stage('tag push') {
