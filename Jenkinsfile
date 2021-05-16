@@ -48,7 +48,7 @@ pipeline {
                     def TAGSTRING = "${params.tagovr}"
                     echo "##### Tag OVERRIDE is applied"
                     echo "##### Tag: $TAGSTRING"
-                    sh 'make -e STAG=$$TAGSTRING stag'
+                    sh "make -e STAG=$TAGSTRING stag"
                 } else {
                     sh 'make stag'
                 }
