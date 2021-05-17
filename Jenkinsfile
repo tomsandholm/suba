@@ -40,6 +40,11 @@ pipeline {
         """
       }
     }
+
+	stage('check parent') {
+	  def upstream = currentBuild.rawBuild.getCause(hudson.model.Cause$UpstreamCause)
+	  echo upstream?.shortDescription
+	}
     
     stage('tag') {
         steps {
