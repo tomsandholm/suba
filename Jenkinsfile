@@ -1,16 +1,5 @@
 // vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: 
 
-def printCausesRecursively(cause) {
-  if (cause.class.toString().contains("UpstreamCause")) {
-    println "This job was caused by " + cause.toString()
-	for (upCause in cause.upstreamCauses) {
-	  printCausesRecursively(upCause)
-	}
-  } else {
-    println "Root cause : " + cause.toString()
-  }
-}
-    
 
 pipeline {
   agent any
@@ -56,10 +45,10 @@ pipeline {
 	stage('check parent') {
 	  steps {
 	    script {
-		  for (cause in manager.build.causes)
-		  {
-		    printCausesRecursively(cause)
-		  }
+		  def causes = currentBuild.getBuildCauses()  
+		  def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
+		  echo "cause: $causes"
+		  echo "specifi: $specificCause"
 		}    
       }	
 	}
