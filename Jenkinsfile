@@ -1,12 +1,16 @@
 // vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: 
 
-
 pipeline {
   agent any
   options {
     timestamps();
     copyArtifactPermission('toprepo');
   }
+
+  environment {
+    CAUSE = "${currentBuild.getBuildCauses()[0].shortDescription}"
+  }
+
   parameters {
     string (
         description: 'Tag Override Value',
@@ -44,12 +48,7 @@ pipeline {
 
 	stage('check parent') {
 	  steps {
-	    script {
-		  def causes = currentBuild.getBuildCauses()  
-		  def specificCause = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause')
-		  echo "cause: $causes"
-		  echo "specifi: $specificCause"
-		}    
+		  echo "Build caused by ${env.CAUSE}"
       }	
 	}
     
