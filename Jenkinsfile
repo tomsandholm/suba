@@ -50,6 +50,8 @@ pipeline {
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
 		  echo 'Build caused by ${env.CAUSE}'
+		  echo "Workspace: ${WORKSPACE}"
+		  echo 'Workspace: ${WORKSPACE}'
       }	
 	}
   }
