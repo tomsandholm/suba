@@ -49,31 +49,9 @@ pipeline {
 	stage('check parent') {
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
+		  echo 'Build caused by ${env.CAUSE}'
       }	
 	}
-    
-    stage('tag') {
-        steps {
-            script {
-                if ( params.tagovr != '' ) {
-                    def TAGSTRING = "${params.tagovr}"
-                    echo "##### Tag OVERRIDE is applied"
-                    echo "##### Tag: $TAGSTRING"
-                    sh "make -e STAG=$TAGSTRING stag"
-                } else {
-                    sh 'make stag'
-                }
-            }
-        }
-    }
-
-    stage('tag push') {
-      steps {
-        sh """
-          make stagpush
-        """
-      }
-    }
   }
   post {
     always {
