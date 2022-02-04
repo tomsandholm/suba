@@ -47,12 +47,11 @@ pipeline {
     }
 
 	stage('check parent') {
+      sh 'echo build caused by ${env.CAUSE}'
+      sh "echo build caused by ${env.CAUSE}"
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
 		  echo 'Build caused by ${env.CAUSE}'
-		  sh 'echo build caused by ${env.CAUSE}'
-		  sh "echo build caused by ${env.CAUSE}"
-
       }	
 	}
   }
