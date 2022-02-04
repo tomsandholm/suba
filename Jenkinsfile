@@ -50,6 +50,9 @@ pipeline {
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
 		  echo 'Build caused by ${env.CAUSE}'
+		  sh 'echo build caused by ${env.CAUSE}'
+		  sh "echo build caused by ${env.CAUSE}"
+
       }	
 	}
   }
