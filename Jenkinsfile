@@ -44,6 +44,7 @@ pipeline {
 		  echo 'Build caused by ${env.CAUSE}'
 		  echo "Workspace: ${WORKSPACE}"
 		  echo 'Workspace: ${WORKSPACE}'
+		  echo 'this is a test'
       }	
 	}
   }
