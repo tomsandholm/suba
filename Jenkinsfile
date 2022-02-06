@@ -45,6 +45,7 @@ pipeline {
 		  echo "Workspace: ${WORKSPACE}"
 		  echo 'Workspace: ${WORKSPACE}'
 		  echo 'this is a test'
+		  echo 'this is not a test'
       }	
 	}
   }
