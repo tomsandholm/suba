@@ -11,14 +11,6 @@ pipeline {
     CAUSE = "${currentBuild.getBuildCauses()[0].shortDescription}"
   }
 
-  parameters {
-    string (
-        description: 'Tag Override Value',
-        name: 'tagovr',
-        defaultValue: ''
-    )
-  }
-
   stages {
 
     stage('checkout') {
