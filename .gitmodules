@@ -1,0 +1,3 @@
+[submodule "subaa"]
+	path = subaa
+	url = https://github.com/tomsandholm/subaa
