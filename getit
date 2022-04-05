@@ -1,0 +1,6 @@
+#! /bin/bash
+
+branch=main
+git submodule update --init --recursive
+git submodule foreach --recursive 'git checkout main'
+git submodule foreach --recursive 'git pull'
