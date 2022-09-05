@@ -1,7 +1,7 @@
 // vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: 
 
 pipeline {
-	agent any
+	agent { label 'arm64dev' }
   options {
     timestamps();
     copyArtifactPermission('toprepo');
