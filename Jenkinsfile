@@ -27,6 +27,7 @@ pipeline {
         sh """
 	  echo "workspace is $workspace"
 	  cd $workspace
+	  ls -l
           autoreconf --verbose --install --force
           ./configure
         """
