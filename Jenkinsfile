@@ -25,6 +25,8 @@ pipeline {
     stage('setup') {
       steps {
         sh """
+	  echo "workspace is $workspace"
+	  cd $workspace
           autoreconf --verbose --install --force
           ./configure
         """
