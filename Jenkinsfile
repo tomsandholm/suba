@@ -20,7 +20,6 @@ pipeline {
 
     stage('checkout') {
       steps {
-	step([$class: 'WsCleanup'])
         checkout scm
       }
     }
@@ -60,7 +59,6 @@ pipeline {
   post {
     always {
       archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
-      step([$class: 'WsCleanup'])
     }
   }
 }
