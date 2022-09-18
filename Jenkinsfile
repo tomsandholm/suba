@@ -39,6 +39,9 @@ pipeline {
     stage('build') {
       steps {
         sh """
+	  pwd
+	  ls -l
+	  cat Makefile
           make all
           make dist
           make package
