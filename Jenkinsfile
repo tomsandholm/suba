@@ -41,7 +41,7 @@ pipeline {
         sh """
 	  pwd
 	  ls -l
-	  cat Makefile
+	  make clean
           make all
           make dist
           make package
