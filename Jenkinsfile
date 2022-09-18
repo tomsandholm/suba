@@ -36,6 +36,7 @@ pipeline {
         sh """
 	  pwd
 	  ls -l
+	  whoami
 	  make clean
           make all
           make dist
