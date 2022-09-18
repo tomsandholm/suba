@@ -22,9 +22,12 @@ pipeline {
     stage('setup') {
       steps {
         sh """
-	  echo "workspace is $workspace"
+	  echo "workspace: $workspace"
 	  cd $workspace
+	  echo "directory listing:"
 	  ls -l
+	  echo "hostname: "
+	  hostname
           autoreconf --verbose --install --force
           ./configure
         """
