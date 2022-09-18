@@ -2,7 +2,10 @@
 
 pipeline {
 	agent {
-		docker { image 'builder:latest' }
+		docker { 
+			image 'builder:latest'
+			reuseNode true
+		}
 	}
   options {
     timestamps();
