@@ -1,7 +1,9 @@
 // vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: 
 
 pipeline {
-  docker { image 'builder:latest' }
+	agent {
+		docker { image 'builder:latest' }
+	}
   options {
     timestamps();
     copyArtifactPermission('toprepo');
