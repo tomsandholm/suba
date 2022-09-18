@@ -3,7 +3,6 @@
 pipeline {
 	agent { 
 		label 'builder'
-		reuseNode true
 	}
   options {
     timestamps();
