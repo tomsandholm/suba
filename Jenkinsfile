@@ -2,7 +2,7 @@
 
 pipeline {
 	agent { 
-		label 'builder'
+		label 'docker-agent'
 	}
   options {
     timestamps();
