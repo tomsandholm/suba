@@ -31,7 +31,7 @@ pipeline {
 	  ls -l
 	  echo "hostname: "
 	  hostname
-	  ./setup.sh
+	  ./setup
           autoreconf --verbose --install --force
           ./configure
         """
