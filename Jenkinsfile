@@ -2,7 +2,7 @@
 
 pipeline {
 	agent { 
-		label 'builder1'
+		label 'builder'
 	}
   options {
     timestamps();
