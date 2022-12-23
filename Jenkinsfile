@@ -27,7 +27,6 @@ pipeline {
         sh """
 	  echo "workspace: $workspace"
 	  cd $workspace
-	  echo "DOCKER_HOST: $DOCKER_HOST"
 	  echo "directory listing:"
 	  ls -l
 	  echo "hostname: "
