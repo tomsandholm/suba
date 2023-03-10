@@ -2,7 +2,7 @@
 
 pipeline {
 	agent { 
-		label 'amd64-native'
+		label 'builder-amd64'
 	}
   options {
     timestamps();
