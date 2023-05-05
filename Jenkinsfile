@@ -2,7 +2,7 @@
 
 pipeline {
 	agent { 
-		label 'docker-agent'
+		label 'builder-amd64'
 	}
   options {
     timestamps();
