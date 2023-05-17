@@ -2,7 +2,7 @@
 
 pipeline {
 	agent { 
-		label 'builder-ppc64le'
+		label 'builder-s390x'
 	}
   options {
     timestamps();
