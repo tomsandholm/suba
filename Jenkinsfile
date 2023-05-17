@@ -2,7 +2,7 @@
 
 pipeline {
 	agent { 
-		label 'builder-i386'
+		label 'builder-ppc64le'
 	}
   options {
     timestamps();
