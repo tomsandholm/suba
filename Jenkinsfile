@@ -68,7 +68,7 @@ pipeline {
     always {
       archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
 	  script {
-	    echo "##### env.DCO_TAG: ${env.DCO_TAG}"
+	    echo "##### env.DCO_TAG: ${DCO_TAG}"
 	  }
     }
   }
