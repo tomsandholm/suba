@@ -24,6 +24,9 @@ pipeline {
 
     stage('setup') {
       steps {
+	    script {
+		  env.DCO_TAG = "test-tag"
+		}
         sh """
 	  echo "workspace: $workspace"
 	  cd $workspace
@@ -64,6 +67,9 @@ pipeline {
   post {
     always {
       archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
+	  script {
+	    echo "##### env.DCO_TAG: ${env.DCO_TAG}"
+	  }
     }
   }
 }
