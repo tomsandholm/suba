@@ -57,7 +57,7 @@ pipeline {
 
 	stage('check parent') {
 	  environment {
-	    DCO_TAG = ${readFile("./dco-tag")}
+	    DCO_TAG = "${readFile("./dco-tag")}"
       }
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
