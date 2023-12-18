@@ -28,7 +28,7 @@ pipeline {
     stage('setup') {
       steps {
 	    script {
-		  DCO_TAG = "test-tag"
+		  DCO_TAG = "tom-test-tag"
 		  writeFile(file: "./dco-tag", text: "$DCO_TAG")
 		}
         sh """
