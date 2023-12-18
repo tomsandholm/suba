@@ -76,6 +76,7 @@ pipeline {
       archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
 	  script {
 	    echo "##### DCO_TAG: ${DCO_TAG}"
+		dco-tag()
 	  }
     }
   }
