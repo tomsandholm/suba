@@ -65,7 +65,7 @@ pipeline {
 		  echo "Workspace: ${WORKSPACE}"
 		  echo 'Workspace: ${WORKSPACE}'
 		  echo 'this is a test'
-		  echo 'DCO_TAG is ${DCO_TAG}'
+		  echo 'DCO_TAG is ${env.DCO_TAG}'
       }	
 	}
   }
