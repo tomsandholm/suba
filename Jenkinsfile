@@ -13,7 +13,7 @@ pipeline {
 
   environment {
     CAUSE = "${currentBuild.getBuildCauses()[0].shortDescription}"
-	DCO_TAG = "${readFile("./dco-tag")}"
+	DCO_TAG = "nothing"
   }
 
   stages {
@@ -29,6 +29,7 @@ pipeline {
       steps {
 	    script {
 		  DCO_TAG = "test-tag"
+		  writeFile("./dco-tag","$DCO_TAG")
 		}
         sh """
 	  echo "workspace: $workspace"
@@ -58,9 +59,6 @@ pipeline {
     }
 
 	stage('check parent') {
-	  environment {
-	    DCO_TAG = "${readFile("./dco-tag")}"
-      }
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
 		  echo 'Build caused by ${env.CAUSE}'
