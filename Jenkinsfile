@@ -13,7 +13,7 @@ pipeline {
 
   environment {
     CAUSE = "${currentBuild.getBuildCauses()[0].shortDescription}"
-	DCO_TAG = "nothing"
+	DCO_TAG = "${readFile("./dco-tag")}"
   }
 
   stages {
