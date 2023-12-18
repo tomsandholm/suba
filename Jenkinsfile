@@ -29,7 +29,7 @@ pipeline {
       steps {
 	    script {
 		  DCO_TAG = "test-tag"
-		  writeFile("./dco-tag","$DCO_TAG")
+		  writeFile(file: "./dco-tag", text: "$DCO_TAG")
 		}
         sh """
 	  echo "workspace: $workspace"
