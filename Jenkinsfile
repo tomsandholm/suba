@@ -48,11 +48,6 @@ pipeline {
       }
     }
 
-	environment {
-	  TOM = "tom sandholm"
-	  DCO_TAG = "2nd inside assignment"
-    }
-
     stage('build') {
       steps {
         sh """
