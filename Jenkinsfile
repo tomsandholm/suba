@@ -25,10 +25,6 @@ pipeline {
       }
     }
 	
-	environment {
-	  NEW_DCO_TAG = "inside assignment"
-    }
-
     stage('setup') {
       steps {
 	    script {
