@@ -24,6 +24,11 @@ pipeline {
 	checkout scm
       }
     }
+	
+	environment {
+	  TOM = "tom sandholm"
+	  DCO_TAG = "inside assignment"
+    }
 
     stage('setup') {
       steps {
@@ -42,6 +47,11 @@ pipeline {
           ./configure
         """
       }
+    }
+
+	environment {
+	  TOM = "tom sandholm"
+	  DCO_TAG = "2nd inside assignment"
     }
 
     stage('build') {
