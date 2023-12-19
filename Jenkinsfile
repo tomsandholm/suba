@@ -26,8 +26,7 @@ pipeline {
     }
 	
 	environment {
-	  TOM = "tom sandholm"
-	  DCO_TAG = "inside assignment"
+	  NEW_DCO_TAG = "inside assignment"
     }
 
     stage('setup') {
