@@ -17,7 +17,7 @@ pipeline {
 		      The desired DCO_TAG value. \
               """,
           name: "DCO_TAG",
-		  defaultValue: "${readFile("./dco-tag")}"
+		  defaultValue: "${readFile(file: "./dco-tag")}"
       )
   }
 
