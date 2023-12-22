@@ -12,14 +12,11 @@ pipeline {
   }
 
   parameters {
-    activeChoiceParam('DCO_TAG') {
-	  description('select your DCO_TAG')
-	  choiceType('PT_SINGLE_SELECT')
-	  groovyScript {
-	    script("readFile(file: './dco-tag')")
-		fallbackScript('return ["error"]')
-      }
-    }
+    string(
+	  defaultValue: '',
+	  name: 'DCO_TAG',
+	  trim: true
+	)
   }
 
   environment {
