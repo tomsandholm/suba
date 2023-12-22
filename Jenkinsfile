@@ -13,7 +13,7 @@ pipeline {
 
   parameters {
     string(
-	  defaultValue: '',
+	  defaultValue: readFile "./dco-tag",
 	  name: 'DCO_TAG',
 	  trim: true
 	)
