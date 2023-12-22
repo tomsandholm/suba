@@ -3,12 +3,22 @@
 @Library('tom-sand') _
 
 pipeline {
-	agent { 
-		label 'builder-amd64'
-	}
+  agent { 
+	label 'builder-amd64'
+  }
   options {
     timestamps();
     copyArtifactPermission('toprepo');
+  }
+
+  parameters {
+      text(
+	      description: """ \
+		      The desired DCO_TAG value. \
+              """,
+          name: "DCO_TAG",
+		  defaultValue: ""
+      )
   }
 
   environment {
@@ -28,7 +38,6 @@ pipeline {
     stage('setup') {
       steps {
 	    script {
-		  DCO_TAG = "tom-test-tag"
 		  writeFile(file: "./dco-tag", text: "$DCO_TAG")
 		}
         sh """
