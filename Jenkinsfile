@@ -35,7 +35,7 @@ pipeline {
     stage('setup') {
       steps {
 	    script {
-		  writeFile(file: "./dco-tag", text: "$DCO_TAG")
+		  writeFile(file: "./dco-tag1", text: "$DCO_TAG")
 		}
         sh """
 	  echo "workspace: $workspace"
