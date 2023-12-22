@@ -23,7 +23,6 @@ pipeline {
 
   environment {
     CAUSE = "${currentBuild.getBuildCauses()[0].shortDescription}"
-	DCO_TAG = "nothing"
   }
 
   stages {
