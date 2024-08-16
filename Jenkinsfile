@@ -1,7 +1,5 @@
 // vi:set nu ai ap aw smd showmatch tabstop=4 shiftwidth=4: 
 
-@Library('tom-sand') _
-
 pipeline {
   agent { 
 	label 'builder-amd64'
@@ -80,7 +78,6 @@ pipeline {
       archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
 	  script {
 	    echo "##### DCO_TAG: ${DCO_TAG}"
-		dco_tag()
 	  }
     }
   }
