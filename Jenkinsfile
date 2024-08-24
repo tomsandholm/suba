@@ -2,7 +2,7 @@
 
 pipeline {
   agent { 
-	label 'builder-arm64v7'
+	label 'builder-arm64v8'
   }
   options {
     timestamps();
