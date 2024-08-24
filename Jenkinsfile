@@ -42,6 +42,7 @@ pipeline {
 	  ls -l
 	  echo "hostname: "
 	  hostname
+	  id
           autoreconf --verbose --install --force
           ./configure
         """
