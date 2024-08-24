@@ -2,7 +2,7 @@
 
 pipeline {
   agent { 
-	label 'builder-s390x'
+	label 'builder-amd64'
   }
   options {
     timestamps();
