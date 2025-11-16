@@ -72,15 +72,18 @@ pipeline {
 		  echo 'this is a test'
 		  echo "DCO_TAG is ${env.DCO_TAG}"
 		  echo "File Matches "
-		  sh "ls sub*.gz"
-		  sh "ls sub*.deb"
+		  sh """
+		    ls sub*.gz
+		    ls sub*.deb
+			tar -C ${WORKSPACE} -cvfz ./workspace.tgz
+		  """
 		  echo "##### end #####"
       }	
 	}
   }
   post {
     always {
-	  archiveArtifacts artifacts: '**', fingerprint: true
+	  archiveArtifacts artifacts: 'sub*.deb, workspace.tgz', onlyIfSuccessful: true
 	  script {
 	    echo "##### DCO_TAG: ${DCO_TAG}"
 	  }
