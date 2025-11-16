@@ -66,13 +66,13 @@ pipeline {
 	stage('check parent') {
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
-		  echo 'Build caused by ${env.CAUSE}'
 		  echo "Workspace: ${WORKSPACE}"
-		  echo 'Workspace: ${WORKSPACE}'
 		  echo 'this is a test'
 		  echo "DCO_TAG is ${env.DCO_TAG}"
 		  echo "File Matches "
 		  sh """
+		    echo "##### start of tarball"
+		    cd ${WORKSPACE}
 		    ls sub*.gz
 		    ls sub*.deb
 			tar -C ${WORKSPACE} -cvfz ./workspace.tgz
