@@ -66,17 +66,19 @@ pipeline {
 	stage('check parent') {
 	  steps {
 		  echo "Build caused by ${env.CAUSE}"
-		  echo 'Build caused by ${env.CAUSE}'
 		  echo "Workspace: ${WORKSPACE}"
-		  echo 'Workspace: ${WORKSPACE}'
 		  echo 'this is a test'
 		  echo "DCO_TAG is ${env.DCO_TAG}"
+		  sh """
+		    ls sub*.gz
+			ls sub*.deb
+		  """
       }	
 	}
   }
   post {
     always {
-      archiveArtifacts artifacts: 'sub*.deb', onlyIfSuccessful: true
+      archiveArtifacts artifacts: '**,sub*.deb', onlyIfSuccessful: true
 	  script {
 	    echo "##### DCO_TAG: ${DCO_TAG}"
 	  }
