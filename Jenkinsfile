@@ -71,6 +71,10 @@ pipeline {
 		  echo 'Workspace: ${WORKSPACE}'
 		  echo 'this is a test'
 		  echo "DCO_TAG is ${env.DCO_TAG}"
+		  echo "File Matches "
+		  sh "ls sub*.gz"
+		  sh "ls sub*.deb"
+		  echo "##### end #####"
       }	
 	}
   }
