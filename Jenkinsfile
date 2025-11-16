@@ -76,7 +76,7 @@ pipeline {
   }
   post {
     always {
-      archiveArtifacts artifacts: 'sub*.deb,suba-1.5.tar.gz', onlyIfSuccessful: true
+      archiveArtifacts artifacts: 'sub*.deb, sub*.gz', onlyIfSuccessful: true
 	  script {
 	    echo "##### DCO_TAG: ${DCO_TAG}"
 	  }
