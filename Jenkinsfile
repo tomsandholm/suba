@@ -40,6 +40,9 @@ pipeline {
 	  cd $workspace
 	  echo "directory listing:"
 	  ls -l
+	  git submodule update --recursive --init
+	  ls -l subaa
+	  cat subaa/data
 	  echo "hostname: "
 	  hostname
 	  id
