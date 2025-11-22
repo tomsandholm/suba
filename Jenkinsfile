@@ -40,7 +40,6 @@ pipeline {
 	  cd $workspace
 	  echo "directory listing:"
 	  ls -l
-	  cat subaa/data
 	  echo "hostname: "
 	  hostname
 	  id
